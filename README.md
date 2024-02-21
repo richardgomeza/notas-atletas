@@ -1,2 +1,3 @@
 # notas-atletas
-Projeto de certificação 1 - Pontuação dos atletas aaa FloripaMaisTic
+# FloripaMaisTic
+## Projeto de certificação 1 - Pontuação dos atletas aaa 
