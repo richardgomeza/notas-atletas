@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-RB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/src/img/webicon.png" type="image/x-icon" />
+    <title>Notas atletas</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="columna">
+        <img
+          src="https://floripamaistec.sesisenai.org.br/wp-content/uploads/sites/11/2023/08/logo-banner-w.png"
+          alt="Imagen"
+        />
+      </div>
+      <div class="columna">
+        <p>Projeto de certificação 1</p>
+        <p>Pontuação dos atletas</p>
+      </div>
+      <div class="columna" id="columnaNome" style="font-family: Dancing Script">
+        <p>Richard Gomez</p>
+      </div>
+    </header>
+    <main class="main">
+      <section class="seccion">
+        <h2>Olá!</h2>
+        <h3>Vejamos como o Script de JavaScript funciona para calcular a pontuação dos atletas.</h3>
+      </section>
+    </main>
+    <main class="main">
+      <section class="seccion" style="display: grid; justify-content: center;">
+        <h2>Função para calcular a média das notas excluindo a maior e a menor nota</h2>  
+      </section>
+    </main>
+    <main class="main">
+      <section class="seccion">
+        <div class="code-box">
+          <div class="code-header">
+            <span
+              class="language"
+              style="font-family: Georgia, 'Times New Roman', Times, serif"
+              >JavaScript</span
+            >
+            <button class="copy-button" onclick="copy('section1')">Copy code</button>
+          </div>
+          <pre class="code-content" id="section1">
+            <code>
+            function calcularMedia(notas) {
+              notas = notas.sort(function (a, b) {
+                return a - b;
+              });
+
+              let notasComputadas = notas.slice(1, 4);
+            
+              let soma = 0;
+              notasComputadas.forEach(function (nota) {
+                soma += nota;
+              });
+            
+              return soma / notasComputadas.length;
+            }
+            </code>
+          </pre>
+        </div>
+      </section>
+
+      <section class="seccion" id="textSection2" style="display: flex; align-items: end; padding-bottom: 1%;">
+
+        <div>
+          <p><code>function calcularMedia(notas) {...}</code> <br>Esta é a declaração de uma função chamada calcularMedia que recebe um array de notas como argumento.</p>
+          <p><code>notas = notas.sort(function (a, b) { return a - b; });</code><br>Esta linha ordena o array de notas em ordem crescente.</p>
+          <p><code>let notasComputadas = notas.slice(1, 4);</code><br>Esta linha cria um novo array notasComputadas que contém todas as notas, exceto a primeira e a última (que são a nota mais baixa e a nota mais alta, respectivamente, devido à ordenação anterior).</p>
+          <p><code>let soma = 0;</code><br>Esta linha inicializa uma variável soma com o valor 0. Esta variável será usada para somar todas as notas.</p>
+          <p><code>notasComputadas.forEach(function (nota) { soma += nota; });</code><br>Esta linha percorre cada nota em notasComputadas e a soma à soma.</p>
+          <p><code>return soma / notasComputadas.length;</code><br>Esta linha calcula a média das notas somadas e retorna o resultado.</p>
+        </div>
+
+      </section>
+    </main>
+    <main class="main">
+      <section class="seccion" style="display: grid; justify-content: center;">
+        <h2>Função para apresentar os resultados ao usuário</h2>  
+      </section>
+    </main>
+    <main class="main">
+      <section class="seccion">
+        <div class="code-box">
+          <div class="code-header">
+            <span
+              class="language"
+              style="font-family: Georgia, 'Times New Roman', Times, serif"
+              >JavaScript</span
+            >
+            <button class="copy-button" onclick="copy('section3')">Copy code</button>
+          </div>
+          <pre class="code-content" id="section3"><code>
+            function apresentarResultados(atletas) {
+              atletas.forEach(function (atleta) {
+                let nome = atleta.nome;
+                let notas = atleta.notas;
+                let media = calcularMedia(notas);
+                let notasObtidas = notas.join(",");
+            
+                console.log("Atleta: " + nome);
+                console.log("Notas Obtidas: " + notasObtidas);
+                console.log("Média Válida: " + media.toFixed(2) + "\n");
+              });
+            }
+        </code></pre>
+        </div>
+      </section>
+
+      <section class="seccion" id="textSection4" style="display: flex; align-items: end; padding-bottom: 1%;">
+
+        <div>
+          <p><code>function apresentarResultados(atletas) {...}</code> <br>Esta é a declaração de uma função chamada <code>apresentarResultados</code> que recebe um array de atletas como argumento.</p>
+          <p><code>atletas.forEach(function (atleta) {...});</code><br>Esta linha percorre cada atleta no array atletas.</p>
+          <p>Dentro da função <code>forEach</code>, são extraídos o nome e as notas de cada atleta, é calculada a media das notas usando a função <code>calcularMedia</code>, e é criada uma string <code>notasObtidas</code> que contém todas as notas separadas por vírgulas.</p>
+          <p>Em seguida, são impressos no console o nome do atleta, as notas obtidas e a média válida.</p>
+        </div>
+
+      </section>
+    </main>   
+    <main class="main">
+      <section class="seccion" style="display: grid; justify-content: center;">
+        <h2>Entrada de dados</h2> 
+      </section>
+    </main>
+    <main class="main">
+      <section class="seccion">
+        <div class="code-box">
+          <div class="code-header">
+            <span
+              class="language"
+              style="font-family: Georgia, 'Times New Roman', Times, serif"
+              >html</span
+            >
+            <button class="copy-button" onclick="copy('section5')">Copy code</button>
+          </div>
+          <pre class="code-content" id="section5"><code>
+          let atletas = [
+            {
+              nome: "Cesar Abascal",
+              notas: [10, 9.34, 8.42, 10, 7.88],
+            },
+            {
+              nome: "Fernando Puntel",
+              notas: [8, 10, 10, 7, 9.33],
+            },
+            {
+              nome: "Daiane Jelinsky",
+              notas: [7, 10, 9.5, 9.5, 8],
+            },
+            {
+              nome: "Bruno Castro",
+              notas: [10, 10, 10, 9, 9.5],
+            },
+          ];
+        </code></pre>
+        </div>
+      </section>
+
+      <section class="seccion"  style="display: grid; align-content: center;">
+        <div style="font-size: 1.3vw;">
+          <p>Matriz de objetos que contém o nome dos atletas e as cinco notas atribuídas pelos jurados.</p>
+        </div>
+      </section>
+    </main>
+    <main class="main">
+      <section class="seccion" style="display: grid; justify-content: center;">
+        <h2>Chamada da função para apresentar os resultados</h2>
+      </section>
+    </main>    
+    <main class="main">
+      <section class="seccion">
+        <div class="code-box">
+          <div class="code-header">
+            <span
+              class="language"
+              style="font-family: Georgia, 'Times New Roman', Times, serif"
+              >JavaScript</span
+            >
+            <button class="copy-button" onclick="copy('section7')">Copy code</button>
+          </div id="contentToCopy">
+          <pre class="code-content" id="section7"><code>
+            apresentarResultados(atletas);
+        </code></pre>
+        </div>
+      </section>
+
+      <section class="seccion"  style="display: grid; align-content: center;">
+        <div style="font-size: 1.3vw;">
+          <p>Esta linha de código chama a função <code>apresentarResultados()</code> e passa para ela a matriz de objetos definida anteriormente.</p>
+        </div>
+      </section>
+    </main>
+    <main style="display: none;">
+      <section class="seccion">
+        <div>
+          <p></p>
+        </div>
+      </section>
+    </main>
+    <footer id="footer"></footer>
+    <script src="/js/notasAtletas.js"></script>
+    <script src="/js/copy.js"></script>
+  </body>
+</html>
