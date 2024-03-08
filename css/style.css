@@ -1,0 +1,108 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url('https://floripamaistec.sesisenai.org.br/wp-content/uploads/sites/11/2023/08/background-9.jpg');
+    background-attachment: fixed;
+    width: 100%;
+}
+
+@media screen {
+    
+}
+
+
+.header {
+    background: rgb(2,3,129) 0%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    max-height: 4vw;
+  }
+  
+  .columna {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .columna img {
+    max-width: 8vw;
+  }
+
+  .columna p {
+    margin: 0;
+    color: #f0f0f0;
+    font-family: "Roboto";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2vw;
+  }
+  
+  #columnaNome p {
+    font-family: "Allura", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2vw;
+    margin: 0;
+    color: #f0f0f0;
+  }
+
+
+  .main {
+    display: flex;
+  }
+
+  .seccion {
+    flex: 1;
+    padding: 10px 10px 10px 20px;
+    /* border: 1px solid #CCC; */
+    color: #f0f0f0;
+  }
+
+  .seccion h2{
+    font-size: 1.5vw;
+  }
+
+  .code-box {
+    border: 1px solid #080808;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .code-header {
+    background-color: #080808;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .language {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .copy-button {
+    background-color: #080808;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .copy-button:hover {
+    background-color: #55585b;
+  }
+  
+  .code-content {
+    margin: 0;
+    padding: 10px;
+    background-color: #080808;
+    overflow-x: auto;
+  }
+  
+  .code-content code {
+    color: #f4f4f4;
+  }
